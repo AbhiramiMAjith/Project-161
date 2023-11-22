@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>bowling</title>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>   
+        <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+
+        <script src="throw.js"></script>
+    </head>
+    <body>
+        <a-scene id ="scene">
+            <a-assets>
+                <a-asset-item id = "pins" src="pin/scene.gltf"></a-asset-item>
+            </a-assets>
+
+            <a-entity
+                id = "camera"
+                camera
+                position = "0 1.6 0"
+                wasd-controls
+                look-controls = "pointerLockEnabled : false">
+
+                <a-cursor></a-cursor>
+            </a-entity>
+
+            <a-entity throw></a-entity>
+
+            <a-plane
+                id = "ground"
+                repeat = "5 5"
+                position = " 0 1 0"
+                rotation = "-90 0 0"
+                height = "200"
+                width = "200"
+                color = "#fffa91"
+                static-body
+                visible = "true">
+            </a-plane>
+            
+            <a-entity position = "0 1.5 -4" gltf-model = "#pins" scale="1 1 1"></a-entity>
+            <a-entity position = "0 1.5 -2" gltf-model = "#pins" scale="1 1 1"></a-entity>
+            <a-entity position = "-0.5 1.5 -2.3" gltf-model = "#pins" scale="1 1 1"></a-entity>
+            <a-entity position = "0.5 1.5 -2.3" gltf-model = "#pins" scale="1 1 1"></a-entity>
+            <a-entity position = "-1 1.5 -2.6" gltf-model = "#pins" scale="1 1 1"></a-entity>
+            <a-entity position = "1 1.5 -2.6" gltf-model = "#pins" scale="1 1 1"></a-entity>
+            <a-entity position = "-1.5 1.5 -2.9" gltf-model = "#pins" scale="1 1 1"></a-entity>
+            <a-entity position = "1.5 1.5 -2.9" gltf-model = "#pins" scale="1 1 1"></a-entity>
+            <a-entity position = "-0.3 1.5 -3.1" gltf-model = "#pins" scale="1 1 1"></a-entity>
+            <a-entity position = "0.3 1.5 -3.1" gltf-model = "#pins" scale="1 1 1"></a-entity>
+        </a-scene>
+    </body>
